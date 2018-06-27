@@ -1,0 +1,47 @@
+body {
+  font-family: Helvetica, sans-serif;
+  line-height: 1.0;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: scroll;
+
+}
+%row2 {
+  grid-row: 2 / 3;
+}
+
+%row3 {
+  grid-row: 3 / 4;
+}
+.container {
+  display: grid;
+  grid-template-columns: [start] 10% 10% 10% 10% 10% 10% 10% 10% 10% [end] 10%;
+  grid-template-rows: 300px 500px auto;
+}
+
+.header {
+  grid-column: start / end;
+  grid-row: 1 / 2;
+}
+
+.hero-center {
+  grid-column: span 4;
+  @extend %row2;
+}
+
+.hero-side {
+  grid-column: span 3;
+  @extend %row2;
+}
+
+.main {
+  grid-column: span 6;
+  @extend %row3;
+}
+
+.side {
+  grid-column: span 4;
+  @extend %row3;
+}
