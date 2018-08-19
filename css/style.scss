@@ -1,20 +1,22 @@
-@import 'section';
 
 $font-sans: "Helvetica Neue", Helvetica, sans-serif;
 $font-serif: "Garamond", "Georgia", serif;
 $font-standard: 16px;
 $font-large: 2.0rem;
 $font-medium: 1.5em;
+$font-small: 0.75em;
 $theme-light: #ffffff;
 $theme-dark: #11111f;
 $theme-one: #fff306;
 $theme-two: #12ff06;
 $theme-three: #f306ff;
 
+@import 'section';
+
 %title {
   font-size: $font-medium;
-  color: $theme-dark;
   font-family: $font-serif;
+  color: $theme-dark;
 }
 
 %center {
@@ -29,7 +31,7 @@ body {
   color: $theme-dark;
   display: grid;
   grid-template-rows: 50vh 10vh auto 15vh;
-  grid-template-columns: repeat(10, 10%)
+  grid-template-columns: repeat(10, 10%);
 }
 
 header {
@@ -58,15 +60,24 @@ header {
 nav {
   grid-row: 2;
   grid-column: 3 / 8;
-
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: 100%;
+
+    li {
+      grid-row: auto;
+      grid-column: auto;
+      @extend %center;
+      a {
+        text-decoration: none;
+        color: $theme-three;
+      }
+    }
   }
 
 }

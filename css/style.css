@@ -1,13 +1,28 @@
 section {
   padding: 2%;
+  margin-bottom: 20px;
+  background-color: #12ff06;
 }
-header h1, section .section-title {
-  font-size: 1.5em;
-  color: #11111f;
-  font-family: "Garamond", "Georgia", serif;
+section .section-title {
+  background-color: #fff306;
+}
+section .section-aux {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-items: start;
 }
 
-footer, header h1 {
+header h1, section .section-title {
+  font-size: 1.5em;
+  font-family: "Garamond", "Georgia", serif;
+  color: #11111f;
+}
+
+footer, nav ul li, header h1 {
   justify-self: center;
   align-self: center;
 }
@@ -50,9 +65,17 @@ nav ul {
   margin: 0;
   padding: 0;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 100%;
+}
+nav ul li {
+  grid-row: auto;
+  grid-column: auto;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #f306ff;
 }
 
 img {
