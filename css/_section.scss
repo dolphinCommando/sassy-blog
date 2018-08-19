@@ -1,0 +1,6 @@
+section {
+  padding: 2%;
+  .section-title {
+    @extend %title;
+  }
+}
