@@ -1,10 +1,9 @@
 section {
   padding: 2%;
   margin-bottom: 20px;
-  background-color: #12ff06;
 }
 section .section-title {
-  background-color: #fff306;
+  background-color: #f0fff4;
 }
 section .section-aux {
   font-size: 0.75em;
@@ -16,54 +15,67 @@ section .section-aux {
   justify-items: start;
 }
 
-header h1, section .section-title {
-  font-size: 1.5em;
-  font-family: "Garamond", "Georgia", serif;
-  color: #11111f;
+footer, nav, header {
+  grid-column-start: 2;
+  grid-column-end: 12;
 }
 
-footer, nav ul li, header h1 {
+section .section-title {
+  font-size: 1.5em;
+  font-family: "Garamond", "Georgia", serif;
+  color: #2a3133;
+}
+
+footer, nav ul li {
   justify-self: center;
   align-self: center;
 }
 
-body {
+aside h1, article h1, nav, header h1 {
+  font-weight: 300;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Garamond", "Georgia", serif;
   font-size: 16px;
+  font-weight: 400;
   background-color: #ffffff;
-  color: #11111f;
+  color: #2a3133;
   display: grid;
-  grid-template-rows: 50vh 10vh auto 15vh;
-  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: 316px 6vw auto 10vw;
+  grid-template-columns: repeat(12, 8.3%);
+  grid-row-gap: 5px;
+  grid-column-gap: 2px;
 }
 
 header {
   grid-row: 1;
-  grid-column: 2/9;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 80% 20%;
 }
 header h1 {
-  grid-row: 2;
-  font-size: 2rem;
-}
-header .jumbo-img {
-  grid-row: 1;
+  position: relative;
+  bottom: 150px;
+  left: 20px;
+  z-index: 2;
+  font-size: 4em;
+  color: #ffffff;
+  font-size: 4em;
 }
 header .jumbo-img img {
   height: 100%;
   width: 100%;
+  z-index: 1;
 }
 
 nav {
   grid-row: 2;
-  grid-column: 3/8;
 }
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  background-color: #f0fff4;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(5, 20%);
@@ -72,10 +84,11 @@ nav ul {
 nav ul li {
   grid-row: auto;
   grid-column: auto;
+  cursor: pointer;
 }
 nav ul li a {
   text-decoration: none;
-  color: #f306ff;
+  color: #383838;
 }
 
 img {
@@ -85,17 +98,24 @@ img {
 
 article {
   grid-row: 3;
-  grid-column: 2/6;
+  grid-column-start: 2;
+  grid-column-end: 8;
+}
+article h1 {
+  background-color: #fff4f0;
 }
 
 aside {
   grid-row: 3;
-  grid-column: 7/9;
+  grid-column-start: 8;
+  grid-column-end: 12;
+}
+aside h1 {
+  background-color: #fff4f0;
 }
 
 footer {
-  grid-row: 4;
-  grid-column: 2/9;
+  grid-row: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

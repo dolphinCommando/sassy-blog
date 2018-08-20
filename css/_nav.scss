@@ -1,0 +1,29 @@
+nav {
+  grid-row: 2;
+  @extend %fluid;
+  @extend %light;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: $theme-one;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: 100%;
+
+    li {
+      grid-row: auto;
+      grid-column: auto;
+      @extend %center;
+      cursor: pointer; 
+      a {
+        text-decoration: none;
+        color: $theme-three;
+      }
+
+    }
+  }
+
+}

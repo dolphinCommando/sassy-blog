@@ -1,17 +1,12 @@
-
-$font-sans: "Helvetica Neue", Helvetica, sans-serif;
-$font-serif: "Garamond", "Georgia", serif;
-$font-standard: 16px;
-$font-large: 2.0rem;
-$font-medium: 1.5em;
-$font-small: 0.75em;
-$theme-light: #ffffff;
-$theme-dark: #11111f;
-$theme-one: #fff306;
-$theme-two: #12ff06;
-$theme-three: #f306ff;
-
+@import 'themes';
 @import 'section';
+$start: 2;
+$end: 12;
+
+%fluid {
+  grid-column-start: $start;
+  grid-column-end: $end;
+}
 
 %title {
   font-size: $font-medium;
@@ -24,63 +19,27 @@ $theme-three: #f306ff;
   align-self: center;
 }
 
-body {
+%light {
+  font-weight: $weight-lt;
   font-family: $font-sans;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: $font-serif;
   font-size: $font-standard;
-  background-color: $theme-light;
+  font-weight: $weight-std;
+  background-color: $theme-white;
   color: $theme-dark;
   display: grid;
-  grid-template-rows: 50vh 10vh auto 15vh;
-  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: 316px 6vw auto 10vw;
+  grid-template-columns: repeat(12, 8.3%);
+  grid-row-gap: 5px;
+  grid-column-gap: 2px;
 }
 
-header {
-  grid-row: 1;
-  grid-column: 2 / 9;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 80% 20%;
-
-  h1 {
-    grid-row: 2;
-    @extend %title;
-    font-size: $font-large;
-    @extend %center;
-  }
-
-  .jumbo-img {
-    grid-row: 1;
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-}
-
-nav {
-  grid-row: 2;
-  grid-column: 3 / 8;
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: 100%;
-
-    li {
-      grid-row: auto;
-      grid-column: auto;
-      @extend %center;
-      a {
-        text-decoration: none;
-        color: $theme-three;
-      }
-    }
-  }
-
-}
+@import 'header';
+@import 'nav';
 
 img {
   width: 100%;
@@ -89,17 +48,27 @@ img {
 
 article {
   grid-row: 3;
-  grid-column: 2 / 6;
+  grid-column-start: $start;
+  grid-column-end: $end - 4;
+  h1 {
+    @extend %light;
+    background-color: $theme-light;
+  }
 }
 
 aside {
   grid-row: 3;
-  grid-column: 7 / 9;
+  grid-column-start: $end - 4;
+  grid-column-end: $end;
+  h1 {
+    @extend %light;
+    background-color: $theme-light;
+  }
 }
 
 footer {
-  grid-row: 4;
-  grid-column: 2 / 9;
+  grid-row: auto;
+  @extend %fluid;
   @extend %center;
 }
 

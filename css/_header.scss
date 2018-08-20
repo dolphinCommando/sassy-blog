@@ -1,0 +1,23 @@
+header {
+  grid-row: 1;
+  @extend %fluid;
+  
+  h1 {
+    position: relative;
+    bottom: 150px;
+    left: 20px;
+    z-index: 2;
+    @extend %light;
+    font-size: $font-large;
+    color: $theme-white;
+    font-size: $font-large;
+  }
+
+  .jumbo-img {
+    img {
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+}
