@@ -6,7 +6,7 @@
     <meta name="keywords" content="Sass, Responsive, CSS Grid, HTML Import">
     <meta name="author" content="Matthew Buchanan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocean Explorers</title>
+    <title>OpenOcean</title>
     <link rel="icon" type="text/s-icon" href="./images/shell.ico"/>
     <link rel="stylesheet" type="text/css" href="./css/style.css"/>
   </head>
@@ -18,26 +18,26 @@
       <h1>Open Ocean</h1>
     </header> 
     <nav>
-      <ul>
+      <span class="navicon" onclick="dropDown()"><img src="./images/reorder.svg" alt="dropdown"/></span>
+      <ul id="navbar">
         <li>
           <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/">Blog</a>
+        </li>
+        <li>
+          <a href="/">Random</a>
         </li>
         <li>
           <a href="/">About</a>
         </li>
         <li>
-          <a href="/">News</a>
-        </li>
-        <li>
-          <a href="/">Travel</a>
-        </li>
-        <li>
           <a href="/">Contact</a>
         </li>
-      </ul>
+      </ul> 
     </nav>
       <article>
-        <h1>News</h1>
         <section>
           <p class="section-title">Antarctic Ice Sheet Sensitive to Higher Ocean Temperatures</p>
           <div class="section-aux">
@@ -62,11 +62,11 @@
         </section>        
       </article>
       <aside>
-        <h1>Travel</h1>
+        <h1>Random</h1>
         <section>
           <p class="section-title">Cape Hatteras</p>
           <img class="section-img" src="./images/lighthouse.jpg" alt="Cape Hatteras"/>
-          <p class="section-text">Cape Hatteras National Seashore is a starkly beautiful wildlife refuge.</p>
+          <p class="section-p">Cape Hatteras National Seashore is a starkly beautiful wildlife refuge.</p>
         </section>
       </aside>
     <footer>
@@ -74,4 +74,19 @@
       <span>Last updated August 2018</span>
     </footer>
   </body>
+  <script>
+    var nav = document.getElementById("navbar");
+    var dataActive = false;
+    function dropDown() {
+      if (!dataActive) {
+        nav.style.display = "block";
+        dataActive = true;
+      }
+      else {
+        nav.style.display = "none";
+        dataActive = false;
+      }
+      
+    }
+  </script>
 </html>

@@ -1,11 +1,11 @@
 header {
-  grid-row: 1;
+  grid-row: 2;
   @extend %fluid;
   
   h1 {
     position: relative;
-    bottom: 150px;
-    left: 20px;
+    bottom: 175px;
+    left: 25px;
     z-index: 2;
     @extend %light;
     font-size: $font-large;
@@ -20,4 +20,20 @@ header {
       z-index: 1;
     }
   }
+}
+@media screen and (max-width: 750px) {
+header {
+  h1 {
+    font-size: 4.0em;
+    bottom: 140px
+  }
+}
+}
+@media screen and (max-width: 520px) {
+header {
+  h1 {
+    font-size: 3.0em;
+    bottom: 100px;
+  }
+}
 }
